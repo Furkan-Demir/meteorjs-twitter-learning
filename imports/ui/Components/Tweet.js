@@ -11,21 +11,21 @@ function Tweet({item}) {
                 </div>
                 <span className="small">{item.tweet}</span>
                 <div className="d-flex justify-content-between mt-2 mb-1">
-                    <div>
+                    <a className="btn btn-sm my-0" href={`/tweet/${item._id}`}>
                         <img src="/images/icons/mention.svg"></img>
-                        <span className="text-muted small ms-1">28</span>
-                    </div>
-                    <div>
+                        <span className="text-muted small ms-1">{item.mention}</span>
+                    </a>
+                    <a className="btn btn-sm my-0">
                     <img src="/images/icons/rt.svg"></img>
-                        <span className="text-muted small ms-1">5</span>
-                    </div>
-                    <div>
+                        <span className="text-muted small ms-1">{item.rt}</span>
+                    </a>
+                    <a className="btn btn-sm my-0">
                     <img src="/images/icons/fav.svg"></img>
-                        <span className="text-muted small ms-1">21</span>
-                    </div>
-                    <div>
+                        <span className="text-muted small ms-1">{item.likes}</span>
+                    </a>
+                    <a className="btn btn-sm my-0">
                         <img src="/images/icons/share.svg" className="me-2"></img>
-                    </div>                 
+                    </a>                 
                     
                 </div>
             </div>

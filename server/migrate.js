@@ -10,7 +10,8 @@ migrate_all = () => {
         password: SEED_PASSWORD,
         profile: {
           name: SEED_NAME,
-          img: "1.png"
+          img: "1.png",
+          fav: []
         }
       });
     }

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import {tweetsCollection} from '/imports/api/Collections/tweetsCollection';
+import { newTweet } from '/imports/api/Tweets';
 import { useTracker } from 'meteor/react-meteor-data';
  
- const TypeTweet = () => {
+ const TypeTweet = (parent) => {
     const user = useTracker(() => Meteor.user());
     const [text, setText] = useState("");
     
@@ -11,14 +11,14 @@ import { useTracker } from 'meteor/react-meteor-data';
 
         if (!text) return;
 
-        tweetsCollection.insert({
-            user:user.username,
+        newTweet({
+            _user:user.username,
             tweet: text.trim(),
             createdAt: new Date(),
             likes: 0,
             rt: 0,
             mention: 0,
-            parent: "0"
+            parent: parent.parent
         });
 
         setText("");

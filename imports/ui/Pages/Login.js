@@ -1,6 +1,5 @@
 import { Meteor } from 'meteor/meteor';
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 
 export default LoginForm = () => {
   const [username, setUsername] = useState('');
@@ -36,7 +35,7 @@ export default LoginForm = () => {
         required
         onChange={e => setPassword(e.target.value)}
       />
-      <Link to="/Register">register</Link>
+      <a href="/register">register</a>
       <button type="submit" className="btn btn-white text-dark mt-3">Log In</button>
     </form>
   );

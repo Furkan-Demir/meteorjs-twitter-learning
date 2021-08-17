@@ -9,13 +9,15 @@ export default RegisterForm = () => {
   const submit = e => {
     e.preventDefault();
     acc = Meteor.users.findOne({username:username});
+    pp = Math.floor(Math.random() * (100 - 2 + 1)) + 2 + ".png";
     if (!acc) {
       Accounts.createUser({
         username: username,
         password: password,
         profile: {
           name: name,
-          img: "1.png"
+          img: pp,
+          fav: [],
         }
       });
     }

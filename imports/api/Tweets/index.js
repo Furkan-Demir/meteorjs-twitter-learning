@@ -1,2 +1,4 @@
 import showMore from './show';
-export { showMore };
+import newTweet from './insert';
+import selectTweet from './select';
+export { showMore, newTweet, selectTweet };
